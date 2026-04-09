@@ -1,0 +1,67 @@
+# EasyConnect VPN — example configuration
+# Copy to ~/.config/easyconnect/config.toml and fill in your values.
+
+[vpn]
+# The HTTPS login portal URL of your EasyConnect VPN server.
+url = "https://vpn.example.com"
+
+# Optional: Docker container name (default: easyconnect)
+# container = "easyconnect"
+
+[auth]
+# Your VPN username.
+# Omit to use the EASYCONNECT_USERNAME environment variable, or let the
+# adapter try to read it from the EasyConnect data directory (~/.ecdata).
+username = "your_username"
+
+# Password is NOT stored here. Resolution order:
+#   1. EASYCONNECT_PASSWORD environment variable
+#   2. macOS Keychain (service name from password_service below)
+#   3. Linux: secret-tool (libsecret)
+#   4. Windows: cmdkey
+# Store with:  security add-generic-password -s easyconnect -a your_username -w
+
+# Keychain service name used to look up the password (default: easyconnect)
+# password_service = "easyconnect"
+
+[container]
+# Docker image to use (default shown below)
+# image = "hagb/docker-easyconnect:7.6.7"
+
+# Automatically create the container if it does not exist (default: true)
+# auto_create = true
+
+# Port mappings (default shown below)
+# ports = [
+#   "127.0.0.1:5901:5901",
+#   "127.0.0.1:10800:1080",
+#   "127.0.0.1:18888:8888",
+#   "127.0.0.1:54530:54530",
+# ]
+
+# VNC password used when creating a new container
+# vnc_password = "change-me-local-vnc-password"
+
+[sms]
+# Keyword used to identify SMS messages containing the verification code.
+# keyword = "验证码"
+
+# How far back to look in Messages history (minutes)
+# window_minutes = 15
+
+# How long to wait for an SMS to arrive (seconds)
+# wait_seconds = 40
+
+# Poll interval when waiting (seconds)
+# poll_seconds = 2
+
+[paths]
+# macOS Messages database path (default: ~/Library/Messages/chat.db)
+# messages_db_path = "~/Library/Messages/chat.db"
+
+# EasyConnect data directory (default: ~/.ecdata)
+# ecdata_root = "~/.ecdata"
+
+[runtime]
+# Seconds to wait after login before declaring success (default: 12)
+# online_wait_seconds = 12

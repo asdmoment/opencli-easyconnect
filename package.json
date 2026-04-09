@@ -1,0 +1,11 @@
+{
+  "name": "opencli-easyconnect",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "OpenCLI adapter for Sangfor EasyConnect VPN automation via Docker + Playwright",
+  "keywords": ["opencli", "easyconnect", "vpn", "sangfor", "automation", "playwright"],
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.44.0"
+  }
+}
